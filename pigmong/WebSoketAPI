@@ -1,0 +1,15 @@
+if ('WebSocket' in widnow){
+    var socket = new WebSocket("ws://localhost:80");
+
+    socket.onmessage = function(e){
+        console.log(e.data);
+    }
+    socket.onopen= function(e){
+        console.log("open");
+    }
+    socket.onmessage = function(e){
+        console.log("close");
+    }
+    socket.send("message");
+    socket.close();
+}
